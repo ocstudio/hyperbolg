@@ -33,4 +33,10 @@ history
 #velocidad y coneccion red 
 ping 8.8.8.8 o www.google.com
 
+#mover directorio
+mv directorio/ ruta de destino/
+
+#renombrar directorios
+mv directorrio nombre_nuevo_directorio
+
 
