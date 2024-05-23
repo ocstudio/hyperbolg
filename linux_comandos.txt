@@ -1,0 +1,36 @@
+Listado de comandos de linux 
+
+
+#comando para instalar paquetes descargados de la web el formato es rpm para fedora 
+sudo rpm -i Paquete.rpm 
+
+#decomprimir archivos rar 
+unrar e miarchivocomprimido.rar
+
+#descomprimir archivos zip 
+unzip miarchivocomprimido.zip
+
+
+#intalar archivos fedora
+sudo dnf5 install paquete
+
+#actualizar todo el sistema
+sudo dnf5 --refresh update
+
+#crear archivos con extencion 
+touch file.txt file.html etc etc etc
+
+
+#eliminar archivos
+rm -vi archivoborrar
+
+#instalar archivos .sh 
+bash archivo.sh 
+
+# history historia de los ultimos 1000 comandos   
+history
+
+#velocidad y coneccion red 
+ping 8.8.8.8 o www.google.com
+
+
