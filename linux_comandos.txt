@@ -40,3 +40,5 @@ mv directorio/ ruta de destino/
 mv directorrio nombre_nuevo_directorio
 
 
+#conexion SSH la ip de destino del usuario 
+ssh nombre usuario@192.168.0.0 
