@@ -46,3 +46,5 @@ ssh nombre usuario@192.168.0.0
 #aplicacion wavemon monitoreo de redes wifi 
 sudo wavemon 
 
+#comprimir archivos tar
+tar -czvf nombre_archivo.tar.gz nombre_archivo
