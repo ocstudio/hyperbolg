@@ -40,3 +40,14 @@ mv directorio/ ruta de destino/
 mv directorrio nombre_nuevo_directorio
 
 
+<<<<<<< HEAD
+=======
+#conexion SSH la ip de destino del usuario 
+ssh nombre usuario@192.168.0.0 
+
+#aplicacion wavemon monitoreo de redes wifi 
+sudo wavemon 
+
+#comprimir archivos tar
+tar -czvf nombre_archivo.tar.gz nombre_archivo
+>>>>>>> ea632670b6716c510e937d2b8d161f31558d419c
