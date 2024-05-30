@@ -1,0 +1,28 @@
+este es el inicio de un blog para iniciar con linux y las aventuras que se deben vivr 
+al entrar en este nuevo mundo del sistema operativo opensource 
+
+para iniciar en el dia a dia hay que saber comandos que solucuonen 
+problemas.  pero en realidad no son problemas son nuevas metodologias 
+con un nivel de seguridad.  para iniciar vamos con uno de los paquetes 
+que en ocaciones presenta problemas para ejecutar y es AppImage 
+para estos tipos de paquetes en ocaciones no tiene los permisos de 
+ejecucion y es algo complicado.  hoy vamos aprender hacerlo desde la 
+terminal de linux 
+
+ṕrimero hay que habilitar los permisos de ejecucion del archivo .AppImage
+para eso usamos el comando:
+
+chmod -x nombre_del_archivo.AppImage
+
+una vez cambiado los permisos, se ejecuta el archivo con el comando:
+
+./nombre_del_archivo.AppImage
+
+con eso podemos abrir y ejecuatar el archivo sin problemas 
+una de las caracteristicas especiales de los archivos AppImage es que 
+es un paquete que tiene todo lo necesario para ejecutar el programa, 
+facilitando mucho la ejecucion. 
+tambien lo puedes archivar o guardar en cualquier lugar directorio
+y no tendras problemas de ejecucion 
+
+bienvenido al mundo minimalista de linux 
