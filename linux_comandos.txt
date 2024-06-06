@@ -57,8 +57,14 @@ ssh-keygen -t rsa -b 4096 -C "youremail@example.com"
 #Comprobar proceso y agregarlo
 eval $(ssh-agent -s)
 
-#
+#actualizar paquetes dnf y flatpak al tiempo 
+sudo dnf5 --refresh update && flatpak upgrade -y
 
+#saber ip del equipo actual
+ip a 
+
+#descarga de archivos en la web
+wget link de descarga
 
 
 
