@@ -66,6 +66,8 @@ ip a
 #descarga de archivos en la web
 wget link de descarga
 
+#visualizar lista de archivos y peso de archivos 
+ls -sh
 
 
 >>>>>>> ea632670b6716c510e937d2b8d161f31558d419c
