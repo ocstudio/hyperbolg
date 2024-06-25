@@ -95,3 +95,7 @@ git rm --cached: mueve los archivos que le indiquemos al estado untracked.
 git rm --force: elimina los archivos de git y del disco duro. Git guarda el registro de la existencia de los archivos, por lo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
 
 Git log –-stat es para ver el numero de bit modificados por comit realizados
+
+'''Clonar los repositorios publicos o privados en colaboracion con
+ otros desarrolladores el comado es el siguiente ''' 
+git clone (https ó SSH)
