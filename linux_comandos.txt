@@ -69,5 +69,15 @@ wget link de descarga
 #visualizar lista de archivos y peso de archivos 
 ls -sh
 
+#tip con el comando history 
+'''el comando history nos arroja como resultado los ultimos 1000 comandos ejecutados en CLI, sin embargo las caracteristicas de
+este comando no son solo estas. una ve ejecutado el comando y tener la lista podemos hacer el llamado de un listado del comando con 
+el signo (!) por ejemplo:  ejecuto history 
+tengo el listado 
+ahora quiero ejecutar el comando que esta en el listado solo tengo que ejecutar 
+!380
+y se ejecuta el comando 
+en caso de querer ejecutar mas de un comando se ejecuta de la siguiente manera 
+!380 && !385
 
 >>>>>>> ea632670b6716c510e937d2b8d161f31558d419c
