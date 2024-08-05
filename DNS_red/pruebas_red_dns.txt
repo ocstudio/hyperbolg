@@ -1,0 +1,106 @@
+pruebas de conectividad y velocidad de internet 
+
+hay muchas formas de hacer pruebas de la conexion a internet y la mas comun entre las personas que no estan relacionasdas con la tecnologia 
+es realizar una pruebas de ancho de banda en la pagina web www.speedtest.com que es una forma rapida y sencilla de poder saber el ancho de banda contratado 
+por la empresa o si estas en un lugar publico con conexion a internet publico (que no es lo mas recomendable) hacer una prueba de velocidad.
+
+para este caso se utilizara una prueba de conexion con un poco mas de analisis, no quiere decir que es algo complicado pero la informacion que arrojan 
+las herrmeintas son importantes y los datos brindan una amplio analisis del estado de la red.  las herramientas que se van a utilizar en este caso son 
+++ip: para saber cual es la ip del dispositivo 
+++ping: herramienta para saber la velocidad de conexion 
+++wavemon: para conocer la cobertura de la red wifi 
+++speedtest-cli: la version de terminal para medir en ancho de banda de la conexion 
+
+como primer paso debemos saber cual es nuestra ip para esto vamos a usar en terminal de preferencia el comando ip a y nos arrojara la ip de nuestro computador 
+
+se visualizara como la siguiente imagen: 
+
+ip a                                                                                                                             ─╯
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s31f6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether d4:81:d7:ca:66:d0 brd ff:ff:ff:ff:ff:ff
+    inet 192.165.11.20/100 brd 192.165.110.255 scope global noprefixroute enp0s31f6
+       valid_lft forever preferred_lft forever
+    inet6 fe80::28eb:b8ac:e01a:f863/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+3: wlp1s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether c2:44:92:ef:e6:7f brd ff:ff:ff:ff:ff:ff permaddr 14:ab:c5:9d:55:67
+
+con este dato que usaremos mas adelante para poder configurar el puerto de red 
+
+como siguiente paso vamos a medir el ping de la conexion.  el ping se utiliza para saber el tiempo idea y retorno de una peticion de paquetes a un servidor, 
+en palabras sencillas envias una señal un paquete por la web y se analiza el tiempo que tarda en ir y volver al punto de origen, es medido en tiempo y a menor tiempo 
+se determina que es mas rapida la señal, es asi como podemos saber la velosidad de las conexiones a internet por el tiempo del ping.
+
+para esto usaremos en comando
+
+ping -c 10 8.8.8.8
+
+el resultado se vera en pantalla d ela siguiente forma 
+
+ping -c 10 8.8.8.8                                                                                                                ─╯
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=119 time=2.52 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=119 time=2.36 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=119 time=2.47 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=119 time=2.35 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=119 time=2.43 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=119 time=2.14 ms
+64 bytes from 8.8.8.8: icmp_seq=7 ttl=119 time=2.39 ms
+64 bytes from 8.8.8.8: icmp_seq=8 ttl=119 time=2.30 ms
+64 bytes from 8.8.8.8: icmp_seq=9 ttl=119 time=2.36 ms
+64 bytes from 8.8.8.8: icmp_seq=10 ttl=119 time=2.34 ms
+
+--- 8.8.8.8 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9010ms
+rtt min/avg/max/mdev = 2.139/2.365/2.519/0.097 ms
+
+en el texto se puede ver los paquetes enviados que en este caso son 10 los paquetes son enviados a un DNS 8.8.8.8 que es conocido por DNS de google y la 
+ultima columna es el tiempo que tarda el paquete en ir y volver. al final de las mediciones se observa la estadistica del ping el maximo el minimo 
+el promedio y la desviacion. tambien se puede ver si existen perdidas de paquetes. 
+
+tambien podemos ejecutar un comando para ver la velocidad de varios DNS y tener una estadistica de cual funciona mejor 
+
+ping -c 10 8.8.8.8
+ping -c 10 9.9.9.9
+ping -c 10 1.1.1.1
+
+este comando lo que ejecuta es 10 ping para cada uno de los DNS y arroja la estadistica de forma consecutiva.  tambien puedes crear un archivo de texto para 
+guardar y analizar los datos con el siguiente comando 
+
+ping -c 10 9.9.9.9 > /home/usuario/documentos/nombre_archivo.txt
+
+ 
+ping -c 10 8.8.8.8 > /home/usuario/documentos/nombre_archivo.txt
+ping -c 10 9.9.9.9 > /home/usuario/documentos/nombre_archivo.txt
+ping -c 10 1.1.1.1 > /home/usuario/documentos/nombre_archivo.txt
+ping -c 10 google.com  > /home/usuario/documentos/nombre_archivo.txt
+ping -c 10 x.com  > /home/usuario/documentos/nombre_archivo.txt
+ping -c 10 facebook.com  > /home/usuario/documentos/nombre_archivo.txt
+ping -c 10 wikipedia.org  > /home/usuario/documentos/nombre_archivo.txt
+ping -c 10 tiktok.com  > /home/usuario/documentos/nombre_archivo.txt
+
+
+asi tambien es una forma facil de poder sacar un reporte de datos de señales 
+
+hasta el momento podemos tener resultados de la conexion externa del servicio de internet.  sin embargo de manera interna la red interna tambien 
+puede arrojar datos y mediciones del estado.  es bien sabido que las redes inalambricas sufren de interferencias por objetos paredes u otras clases de 
+señales que hay en el ambiente.  en este caso estamos hablando de las señales wifi.
+
+para este caso tenemos que usar una herramienta llamada iperf3, con esta herrameinta se pueden obtener datos de cuan efectiva es la conexion por wifi 
+El esquema de conexion es muy facil un equipo es asignado como un servidor dentreo de la red y el segundo equipo se asigna para hacer peticiones o enviar un ping 
+con esto lo que logramos es hacer las mediciones de la velocidad tanto de carga como de descarga en la red interna.  teniendo en cuenta que la red wifi es
+afectada por diferentesa interferencias, con esta herramienta podemos saber o identificar las interferencia y asi poder optimizar los puntos de mayor 
+cobertura y señal. De esta manera podemos hacer un campo de medicion dentro de una red interna 
+
+otra herramienta un poco mas grafica es wavemon.  Est herramienta funciona en tiempo real y hace mediciones del alcance de la señal wifi.  un modo 
+de empleo con esa herramienta lograr hacer un mapa del area y visualizar la zona de cobertura y la potencia de la señal.  acompañado a eso podemos observar 
+las otras señales wifi que interfieren en la zona.  Algo interesante en la herramienta es poder ver graficamente la interferencia de la señal en 
+tiempo real.
+
+
